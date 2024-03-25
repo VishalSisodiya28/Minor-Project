@@ -130,3 +130,11 @@ form{
     }
     
 }
+
+
+
+.error-message {
+    color: rgb(255, 0, 0); 
+    font-weight: bold; 
+    text-align: center;
+}

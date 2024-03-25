@@ -52,7 +52,7 @@ app.post("/register",async (req,res)=>{
 
            const registered =  await registerUser.save();
 
-           res.status(201).render("index");
+           res.status(201).render("loginSuccess");
         }else{
             res.send("Password isn't matching")
         }
@@ -67,8 +67,8 @@ app.get("/login",(req,res)=>{
 })
 
 app.post("/login",async (req,res)=>{
-   try{
 
+   try{
 
     const email=req.body.email;
     const password=req.body.password;
@@ -76,22 +76,21 @@ app.post("/login",async (req,res)=>{
     const userEmail = await Register.findOne({email:email});
 
     //hashed password validating below line
-
     const isMatch = await bcrypt.compare(password,userEmail.password);
     
     // if(userEmail.password===password){ keep this line for normal or below line for hashed one
     if(isMatch){ 
         res.status(201).render("loginSuccess");
     }else{
-        res.send("Invalid login credentials, Try Register instead");
-    }
+        // res.send("Invalid login credentials, Try Register instead");
+        res.render("login", { errorMessage: 'Invalid Credentials, Try Again !' });
 
+    }
 
    }catch(error){
     res.status(400).send("Invalid credentials..!");
    }
 })
-
 
 app.get("/register",(req,res)=>{
    
@@ -107,7 +106,6 @@ app.post("/index",async (req,res)=>{
         res.status(400).send(error);
     }
 })
-
 
 app.listen(port,()=>{
     console.log(`Server is running at port no. ${port}`);
