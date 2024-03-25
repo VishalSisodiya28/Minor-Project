@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+   <section class="container forms">
+
+        <div class="form">
+            <div class="form-content">
+                <header>Sign Up</header>
+                <form action="/register" method="POST">
+
+                    <div class="field input-field">
+                        <input type="text" placeholder="First name" class="input" name="firstName">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="text" placeholder="Last name" class="input" name="lastName">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input" name="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Create password" class="password" name="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm password" class="password" name="confirmPassword">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="field button-field">
+                        <button name="signupBtn">Sign Up</button>
+                    </div>
+                </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="/login" >Login</a></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    
+
+</body>
+
+</html>
